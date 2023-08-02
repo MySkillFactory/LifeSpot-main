@@ -3,24 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>LifeSpot</title>
-    <link href="../Static/CSS/index.css" rel="stylesheet" type="text/css" />
- </head>
+    <link href="../Static/CSS/index.css" rel="stylesheet" type="text/css" />    
+    <script src="../Static/JS/index.js"></script>
+</head>
 <header id="header-index">
-    <!--Заголовок страницы-->
-    <h1>LifeSpot — прямые трансляции с улиц</h1>
-    <!--Параграф-->
+    <h1>LifeSpot - прямые трансляции с улиц</h1>
     <p>Покажем, что происходит прямо сейчас</p>
-    <input id="input_search" type="text" placeholder="Поиск видео..."/>
+    <input type="text" oninput="
+           /*Код ниже отрабатывает каждый раз при вводе символа в input* /
+           // Сохраняем текст пользовательского запроса.
+           let inputString=document.getElementsByTagName('input')[0].value.toLowerCase();
+           // Находим контейнеры с видео, которые необходимо фильтровать
+           let elements=document.getElementsByClassName('video-container');
+           // Пробегаемся по контейнерам
+           for (let i=0; i <= elements.length; i++ ){
+    // Вытаскиваем текст описания видео, которое необходимо отфильтровать
+    let videoText = elements[i].querySelector(".video-title").innerText;
+    // Выполняем фильтрацию, сравнивая значения в нижнем регистре
+    if(!videoText.toLowerCase().includes(inputString.toLowerCase())){
+    // Описание
+    elements[i].style.display = 'none';
+    } else {
+    elements[i].style.display = 'inline-block';
+    }
+    }
+
+    " size="50%">
+
 </header>
 <body>
     <div class="bordered">
 
         <!--Кнопки-->
-        <!--
-        <a href="https://www.youtube.com/watch?v=wCcMcaiRbhM"><button>Санкт-Петербург</button></a>
-        <a href="https://www.youtube.com/watch?v=srlpC5tmhYs&ab_channel=BryantParkNYC"><button>Нью-Йорк</button></a>
-        <a href="https://www.youtube.com/watch?v=JplMzss6_YE&ab_channel=WokiliWanders"><button>Лондон</button></a>
-        -->
+        <!--placeholder="Поиск видео...    <a href="https://www.youtube.com/watch?v=wCcMcaiRbhM"><button>Санкт-Петербург</button></a>
+    <a href="https://www.youtube.com/watch?v=srlpC5tmhYs&ab_channel=BryantParkNYC"><button>Нью-Йорк</button></a>
+    <a href="https://www.youtube.com/watch?v=JplMzss6_YE&ab_channel=WokiliWanders"><button>Лондон</button></a>
+    -->
         <div class="video-container">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/dhVzWNos718" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <h3 class="video-title">Санкт-Петербург</h3>

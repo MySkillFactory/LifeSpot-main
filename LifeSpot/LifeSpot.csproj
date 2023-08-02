@@ -6,10 +6,14 @@
 
     <ItemGroup>
       <None Remove="Static\" />
-      <None Remove="Static\Scripts\" />
+      <None Remove="Static\wwwroot\" />
+      <None Remove="Static\JS\" />
+      <None Remove="Views\Shared\" />
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Static\" />
-      <Folder Include="Static\Scripts\" />
+      <Folder Include="Static\wwwroot\" />
+      <Folder Include="Static\JS\" />
+      <Folder Include="Views\Shared\" />
     </ItemGroup>
 </Project>
