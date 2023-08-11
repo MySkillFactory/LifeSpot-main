@@ -28,6 +28,20 @@ header, footer, body {
     text-decoration: 0; /* Убрать подчеркивание ссылки*/
 }
 
+.review-container, .review-button {
+    display: inline-block;
+    margin-top: 0.5em;
+    padding-left: 1%;
+    padding-top: 1%;
+}
+
+.review-text {
+    display: block;
+    margin-top: 0.5em;
+    padding-left: 1%;
+    padding-top: 1%;
+}
+
 /*Глобальные стили для хедеров на всём сайте*/
 header {    
     color: black;    
@@ -76,4 +90,20 @@ input:focus {
     #display: flex;
     #position: absolute;
     z-index: 999;
+}
+
+button {
+    background-color: #e68b30;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-block: 10%;
+    width: 90%;
+    height: 100px;
+    font-size: x-large;
+}
+
+button:hover {
+    background-color: #b55d04;
 }
